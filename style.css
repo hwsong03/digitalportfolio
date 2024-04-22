@@ -1,0 +1,94 @@
+/* General body styles */
+body {
+    font-family: 'Gill Sans', sans-serif;
+    color: black; /* Default text color set to black */
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    background-color: white;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: navy;
+}
+
+/* Introductory section styles */
+.intro {
+    position: relative;
+    text-align: center;
+    padding: 70px 0; /* Adjust padding as needed */
+    color: white; /* White text color for better contrast */
+}
+
+.intro p {
+    font-size: 2em; /* Large text size */
+    font-weight: bold; /* Bold text */
+    color: black; /* Text color */
+    margin: 0; /* Removes any margin around the paragraph */
+}
+
+#intro-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensures canvas is below the text */
+}
+
+
+
+/* Main content styles */
+main {
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+}
+
+section h2 {
+    color: darkblue;
+}
+
+/* Footer styles */
+footer {
+    background-color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
