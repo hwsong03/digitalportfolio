@@ -1,7 +1,7 @@
 /* General body styles */
 body {
     font-family: 'Gill Sans', sans-serif;
-    color: black; /* Default text color set to black */
+    color: black;
     background-color: white;
     margin: 0;
     padding: 0;
@@ -23,44 +23,59 @@ header {
     align-items: center;
 }
 
+/* Logo Image */
 .logo {
     width: 100px;
 }
 
+/* First nav bar */
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    text-align: right; /* Align the navigation items to the right */
 }
 
 nav ul li {
     display: inline;
     margin-left: 20px;
+
 }
+
+nav ul li:first-child a {
+    font-weight: bold;
+}
+
 
 nav a {
     text-decoration: none;
     color: black;
     transition: color 0.3s;
+    font-family: 'Gill Sans', sans-serif;
 }
 
 nav a:hover {
-    color: navy;
+    color: #4a6178;
 }
 
-/* Introductory section styles */
+
+/* Introductory section */
 .intro {
+    margin-top: 10px;
+    max-width: 100%;
     position: relative;
     text-align: center;
-    padding: 70px 0; /* Adjust padding as needed */
-    color: white; /* White text color for better contrast */
+    padding: 150px 0;
+    color: white;
 }
 
 .intro p {
-    font-size: 2em; /* Large text size */
-    font-weight: bold; /* Bold text */
-    color: black; /* Text color */
-    margin: 0; /* Removes any margin around the paragraph */
+    position: relative;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+    padding-bottom: 150px;
 }
 
 #intro-background {
@@ -69,10 +84,314 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Ensures canvas is below the text */
+    z-index: 1;
 }
 
+/* Second nav bar */
+.category-nav ul {
+    max-width: 100%;
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 10px 0;
+}
 
+.category-nav li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+.category-nav button {
+    background: none;
+    border: none;
+    color: black;
+    font-family: "omnium-tagline", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: color 0.5s ease;
+    position: relative;
+}
+
+.category-nav button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 40px;
+    background-color: #4a6178;
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: 50% 50%;
+    z-index: -1;
+}
+
+.category-nav button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.category-nav button:hover {
+    color: white;
+}
+
+.category-nav button[data-filter="all"]:hover::before {
+    background-color: #1c305c; 
+}
+
+/* Project Grod */
+.projects-grid {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Project Card */
+.project-card {
+    max-width: 100%;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    width: 300px; 
+    transition: all 0.3s ease; 
+}
+
+.project-card .project-content {
+    display: none; 
+}
+
+.project-card .project-title {
+    cursor: pointer; 
+    color: #1c305c; 
+}
+
+.project-card .project-title:hover {
+    color: #9ca5b4; 
+}
+
+/* Styles for an active card */
+.project-card.active {
+    height: auto; 
+    width: 90%; 
+}
+
+.project-card.active .project-content {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+/* Music Cards */
+.project-card[data-category="music"].active {
+    padding-top: 20px; 
+    padding-right: 30px; 
+    padding-bottom: 20px; 
+    padding-left: 30px; 
+    display: block; 
+}
+
+.project-card[data-category="music"].active .project-title {
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    text-align: left; 
+    margin-top: 0; 
+}
+
+.project-card[data-category="music"].active .project-content {
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start; 
+}
+
+.project-card[data-category="music"].active audio {
+    flex: none; /
+    margin-left: 20px;
+}
+
+.project-card[data-category="music"].active p {
+    flex: 1; 
+    margin-left: 30px; 
+    margin-right: 20px;
+    text-align: left; 
+}
+
+/* 3d Cards */
+.project-card[data-category="3d"].active {
+    padding-top: 20px; 
+    padding-right: 30px; 
+    padding-bottom: 40px; 
+    padding-left: 30px; 
+    display: block; 
+}
+
+.project-card[data-category="3d"].active .project-title {
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    text-align: left;
+    margin-top: 0; 
+}
+
+.project-card[data-category="3d"].active .project-content {
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+}
+
+.project-card[data-category="3d"].active .project-content .project-image {
+    width: 400px; 
+    height: auto; 
+    margin-right: 30px; 
+}
+
+.project-card[data-category="3d"].active .project-content .project-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; 
+    flex: 1; 
+}
+
+.project-card[data-category="3d"].active .project-content .project-details p {
+    margin-top: 75px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.project-card[data-category="3d"].active .project-content .project-details a {
+    display: block; 
+    margin-top: 10px; 
+    padding: 10px 20px;
+    background-color: #4a6178;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: normal;
+    text-align: center; 
+}
+
+.project-card[data-category="3d"].active .project-content .project-details a:hover {
+    background-color: #2a4162; 
+}
+
+/* Motion Cards*/
+.project-card[data-category="motion"].active {
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    display: block;
+}
+
+.project-card[data-category="motion"].active .project-title {
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    text-align: left;
+    margin-top: 0;
+}
+
+.project-card[data-category="motion"].active .project-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.project-card[data-category="motion"].active .project-content video {
+    width: 400px; 
+    height: auto; 
+    margin-right: 30px; 
+}
+
+.project-card[data-category="motion"].active .project-content .project-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.project-card[data-category="motion"].active .project-content .project-details p {
+    margin-top: 75px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Game Cards */
+.project-card[data-category="game"].active {
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    display: block;
+}
+
+.project-card[data-category="game"].active .project-title {
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    text-align: left;
+    margin-top: 0;
+}
+
+.project-card[data-category="game"].active .project-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.project-card[data-category="game"].active .project-content .project-image {
+    width: 400px;
+    height: auto;
+    margin-right: 30px;
+}
+
+.project-card[data-category="game"].active .project-content .project-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.project-card[data-category="game"].active .project-content .project-details .game-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px; 
+}
+
+.project-card[data-category="game"].active .project-content .project-details p {
+    margin-top: 75px;
+    margin-bottom: 27px;
+    text-align: left;
+}
+
+.project-card[data-category="game"].active .project-content .project-details .game-links a {
+    /* Styling for individual links */
+    padding: 10px 20px;
+    background-color: #4a6178;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.project-card[data-category="game"].active .project-content .project-details .game-links a:hover {
+    background-color: #2a4162; 
+}
 
 /* Main content styles */
 main {
@@ -87,8 +406,14 @@ section h2 {
 
 /* Footer styles */
 footer {
+    margin-top: auto;
     background-color: white;
     text-align: center;
-    padding: 10px 0;
-    margin-top: auto;
+    max-width: 100%;
+}
+
+/* Remove padding and margin from the end of each component */
+header, nav, .intro, .category-nav, .projects-grid, main, section, footer {
+    padding-bottom: 0;
+    margin-bottom: 0;
 }

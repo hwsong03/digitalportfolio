@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multimedia Artist Portfolio</title>
+    <title>Hawon's Portfolio</title>
+    <link rel="stylesheet" href="https://use.typekit.net/mlh8xlu.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <header>
         <div class="header-content">
             <img src="logo.png" alt="Logo" class="logo">
@@ -19,20 +23,107 @@
             </nav>
         </div>
     </header>
+
     <section class="intro">
         <div id="intro-background"></div>
         <p>Explore my latest multimedia projects spanning various platforms and mediums</p>
     </section>
+
     <main>
-        <section>
-            <h2>Featured Projects</h2>
+        <nav class="category-nav">
+            <ul>
+                <li><button class="filter-btn" data-filter="all">All</button></li> 
+                <li><button class="filter-btn" data-filter="music">Music</button></li>
+                <li><button class="filter-btn" data-filter="3d">3D</button></li>
+                <li><button class="filter-btn" data-filter="motion">Motion</button></li>
+                <li><button class="filter-btn" data-filter="game">Game</button></li>
+            </ul>
+        </nav>
+
+        <section class="projects-grid">
+
+            <!-- Music Project Card -->
+            <div class="project-card" data-category="music">
+                <h3 class="project-title" style="cursor:pointer;">Thriller Sound Collage</h3>
+                <div class="project-content">
+                    <audio controls>
+                        <source src="Sound Collage.mp3" type="audio/mpeg">
+                    </audio>
+                    <p>Creation Date: September 2023<br /><br />First project using Reaper as a medium. This sound collage was created by munipulating a vareity of different types of aduio sources with the theme of thriller.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="music">
+                <h3 class="project-title" style="cursor:pointer;">Epic Band</h3>
+                <div class="project-content">
+                    <audio controls>
+                        <source src="livepro.mp3" type="audio/mpeg">
+                    </audio>
+                    <p>Creation Date: October 2023<br /><br />First project using Ableton Live as a medium. This simple band music contains an epic drum solo and showcases a harmonious intro, climax, and ending.</p>
+                </div>
+            </div>
+
+            <!-- 3D Project Card -->
+            <div class="project-card" data-category="3d">
+                <h3 class="project-title" style="cursor:pointer;">Bedroom in Arles</h3>
+                <div class="project-content">
+                    <img src="ba1.png" alt="Bedroom in Arles" class="project-image" data-images="ba1.png,ba2.png,ba3.png" style="cursor:pointer;" />
+                    <div class="project-details">
+                        <p>Creation Date: March 2024<br /><br />First project using Maya as a medium, and also the first time using 3D programs in general. The objective of this project was to create a 3D version of Van Gogh's Bedroom in Arles. The UV maps were created by use of Adobe Photoshop.</p>
+                        <a href="https://hwsong03.github.io/caseStudy/home.html" target="_blank">Read the case study</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="3d">
+                <h3 class="project-title" style="cursor:pointer;">Wall-E</h3>
+                <div class="project-content">
+                    <img src="we1.png" alt="New 3D Project" class="project-image" data-images="we1.png,we2.png,we3.png" style="cursor:pointer;" />
+                    <div class="project-details">
+                        <p>Creation Date: April 2024<br /><br />This 3D rendition of Wall-E has been created by Maya. The process of modeling and texturing has all been completed by use of tools inside the prgoram.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Motion Card -->
+            <div class="project-card" data-category="motion">
+                <h3 class="project-title" style="cursor:pointer;">Cat.png</h3>
+                <div class="project-content">
+                    <video width="400" controls>
+                        <source src="cv.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="project-details">
+                        <p>Creation Date: April 2024<br /><br />This motion graphic video is created using Adobe After Effects and Premiere. The cat's movements are adjusted via the puppet pin tool in After Effects, and the sound effects were put together using Premiere.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Project Card -->
+            <div class="project-card" data-category="game">
+                <h3 class="project-title" style="cursor:pointer;">Candy Ghost</h3>
+                <div class="project-content">
+                    <img src="cg.png" alt="Game Image" class="project-image" />
+                    <div class="project-details">
+                        <p>Creation Date: September 2023<br /><br />This game was created by using GameMaker Studio. The player has to find and eat all the candy hidden in the dark before the time runs out while avoiding the bombs. </p>
+                        <div class="game-links">
+                            <a href="https://youtu.be/4Xx4azQgCO0" target="_blank" class="youtube-link">Watch on YouTube</a>
+                            <a href="https://drive.google.com/file/d/1jW1eecKkXsykN23Z3mNyipIbqSE9Has1/view?usp=sharing" target="_blank" class="download-link">Download Game</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
-        <!-- Future sections for project categories can be inserted here -->
     </main>
-    <footer>
-        <p>© 2024 by Hawon Song.</p>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="script.js"></script>
+
+<footer>
+    <p>© 2024 by Hawon Song.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+<script src="script.js"></script> 
+
 </body>
 </html>
