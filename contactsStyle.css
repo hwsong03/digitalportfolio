@@ -1,0 +1,125 @@
+/* General body styles */
+body {
+    font-family: 'Gill Sans', sans-serif;
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    background-color: white;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Image */
+.logo {
+    width: 100px;
+}
+
+/* First nav bar */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: right; 
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li:nth-child(3) a {
+    font-weight: bold; /* Highlight the Contacts page */
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+nav a:hover {
+    color: #4a6178;
+}
+
+/* Main section styles */
+.contact-main {
+    margin-top: 0px; 
+    max-width: 100%;
+    position: relative; 
+    text-align: center;
+    padding: 225px 0; 
+    color: white;
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+}
+
+/* Separate section styles for contact info header */
+.contact-info-header h1 {
+    font-family: "omnium-tagline", sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 60px;
+    margin-bottom: 40px;
+}
+
+/* Styles for the rest of the contact info */
+.contact-info {
+    font-family: 'Gill Sans', sans-serif;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: white; /* Darker blue for contrast */
+    font-weight: bold;
+    text-decoration: none; /* No underline */
+}
+
+.contact-info a:hover {
+    color: black; /* Even darker on hover */
+    cursor: pointer;
+}
+
+/* Background container for dynamic p5.js sketch, similar to about page */
+#contacts-main-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1; 
+}
+
+/* Footer styles */
+footer {
+    margin-top: auto;
+    background-color: white;
+    text-align: center;
+    max-width: 100%;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .logo {
+        width: 50px; /* Reduce logo size for smaller screens */
+    }
+    /* Adjust the padding for main content on smaller screens */
+    .contact-main {
+        padding: 30px 0;
+    }
+}
