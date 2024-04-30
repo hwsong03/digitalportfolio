@@ -75,9 +75,23 @@ nav a:hover {
     overflow-wrap: break-word; 
 }
 
+.about-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 95%; /* Adjust width as needed */
+    height: 90%; /* Adjust height as needed */
+    background-color: rgba(255, 255, 255, 0.8); /* White with opacity */
+    transform: translate(-50%, -50%);
+    border-radius: 30%; /* Makes the div oval */
+    z-index: 0; /* Ensures it doesn't overlap text */
+}
+
 
 /* Individual text section styles */
 .about-section {
+    position: relative;
+    z-index: 1;
     margin-bottom: 30px; /* Add spacing between sections */
 }
 
